@@ -1,0 +1,20 @@
+#你在本机上所有git仓库的提交，机器都会记录是谁提交的。
+#设置用户名     git config --global user.name "litaiguo"
+#设置邮箱       git config --global user.email "litaiguo1009@126.com"
+
+
+mkdir learngit
+cd learngit
+pwd
+
+
+#初始化一个Git仓库     
+git init
+
+
+git add readme.txt
+
+git commit -m "wrote a readme file"
+
+
+git status
