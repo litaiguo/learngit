@@ -18,3 +18,5 @@ git commit -m "wrote a readme file"
 
 
 git status
+
+git diff
