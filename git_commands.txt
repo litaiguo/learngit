@@ -1,0 +1,33 @@
+#用Debian或Ubuntu Linux，直接安装Git
+sudo apt-get install git
+
+
+
+
+#你在本机上所有git仓库的提交，机器都会记录是谁提交的。所以要设置用户名、邮箱
+#设置用户名     
+git config --global user.name "litaiguo"
+#设置邮箱       
+git config --global user.email "litaiguo1009@126.com"
+
+
+#新建文件夹、切换到相应目录
+mkdir learngit
+cd learngit
+pwd
+
+
+#初始化一个Git仓库     
+git init
+
+#将修改保存到暂存区
+git add tiger_20180524.txt
+
+#将暂存区内容提交到版本库
+git commit -m "wrote a readme file"
+
+#查看当前版本库状态
+git status
+
+#比较暂存区与当前版本库之间的差异
+git diff
