@@ -1,0 +1,46 @@
+#创建并切换到 dev分支
+git checkout -b dev
+
+$ git branch dev     #创建分支
+$ git checkout dev   #切换分支
+
+
+#查看当前分支
+$ git branch
+
+
+#切回到master分支
+$ git checkout master
+
+#合并指定分支到当前分支 （假设你已经在master分支上了，把dev分支合到master上来）
+$ git merge dev          
+
+#合并完成之后删除分支
+$ git branch -d dev   
+
+#采用非Fast forward模式合并分支
+$ git merge --no-ff -m "merge with no-ff" dev  
+
+#查看分支合并图
+git log --graph
+
+
+#当Git无法自动合并分支时，就必须首先解决冲突。解决冲突后，再提交，合并完成。
+#解决冲突就是把Git合并失败的文件手动编辑为我们希望的内容，再提交。
+#用git log --graph命令可以看到分支合并图。
+
+#冲突了，文件样子
+Git is a distributed version control system.
+Git is free software distributed under the GPL.
+Git has a mutable index called stage.
+Git tracks changes of files.
+<<<<<<< HEAD
+Creating a new branch is quick & simple.
+=======
+Creating a new branch is quick AND simple.
+>>>>>>> feature1       
+
+
+
+
+
