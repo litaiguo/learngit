@@ -1,0 +1,63 @@
+#将修改保存到暂存区
+git add tiger_20180524.txt
+
+#将暂存区内容提交到版本库
+git commit -m "wrote a readme file"
+
+#查看当前版本库状态
+git status
+
+
+
+#比较working tree和stage文件之间的差异
+git diff
+
+#1，当工作区有改动的时候，临时区为空（没有进行git add），那么diff的对比是和上次的commit的记录进行对比的。 
+#2，当工作区有改动，临时区有东西的时候，diff是和临时区进行比较的。
+
+
+$ git diff                 (1)：working tree和stage文件的差异
+$ git diff --stat             #(1)：查看简单的diff结果
+
+$ git diff --cached        
+$ git diff --staged        (2)stage和commit文件的差异
+
+$ git diff HEAD            (3)：commit和working tree文件的差异（查看工作区和版本库里面最新版本的区别）
+
+$ git diff test            (1)：不是对比当前分支，而是对比test分支
+$ git diff HEAD -- ./test  (2)：对比其中的test文件
+$ git diff HEAD^ HEAD      (3)：对比最近两次提交之间的差异
+
+$ git diff topic master    (1)：对比topic和master分支的差异
+
+
+
+
+
+#显示从最近到最远的提交日志
+git log
+#简洁地显示从最近到最远的提交日志
+git log  --pretty=oneline
+
+
+#命令git checkout -- readme.txt意思就是，把readme.txt文件在工作区的修改全部撤销，这里有两种情况：
+#一种是readme.txt自修改后还没有被放到暂存区，现在，撤销修改就回到和版本库一模一样的状态；
+#一种是readme.txt已经添加到暂存区后，又作了修改，现在，撤销修改就回到添加到暂存区后的状态。
+#总之，就是让这个文件回到最近一次git commit或git add时的状态。
+$ git checkout -- readme.txt
+
+
+
+#把暂存区的修改撤销掉（unstage），重新放回工作区：
+git reset HEAD readme.txt
+
+#版本回退
+git reset --hard HEAD^
+
+
+#记录你的每一次命令
+git reflog
+
+
+#删除文件
+$ rm test.txt

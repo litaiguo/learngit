@@ -1,0 +1,42 @@
+#暂时把当前分支的工作现场存起来
+git stash
+#查看存储列表
+git stash list
+#把临时存储的内容恢复+ 删除临时存储
+git stash apply     
+git stash drop
+
+#把临时存储的内容清除
+git stash clear
+
+#把临时存储的内容恢复并删除临时存储
+git stash pop
+
+
+#强行删除feature-vulcan分支
+git branch -D feature-vulcan
+
+
+#查看远程库的信息
+git remote
+#显示更详细的信息
+git remote -v
+
+
+先用git pull把最新的提交从origin/dev抓下来，然后，在本地合并，解决冲突，再推送
+
+#在本地创建和远程分支对应的分支
+git checkout -b branch-name origin/branch-name
+#指定本地dev分支与远程origin/dev分支链接
+git branch --set-upstream-to=origin/dev dev
+
+
+#推送到master
+$ git push origin master
+#推送到其它分支
+$ git push origin dev
+
+
+
+#rebase操作可以把本地未push的分叉提交历史整理成直线；
+git rebase

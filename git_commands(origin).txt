@@ -1,0 +1,14 @@
+
+远程仓库相关
+#本地关联远程仓库
+$ git remote add origin git@github.com:litaiguo/learngit.git
+
+#第一次把本地库的所有内容推送到远程库上
+$ git push -u origin master
+
+#后续把本地库的内容推送到远程库上
+git push origin master
+
+
+#把远程库上的内容克隆一个本地库
+$ git clone git@github.com:litaiguo/learngit.git
