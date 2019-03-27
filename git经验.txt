@@ -1,0 +1,41 @@
+
+
+#设置全局用户名、邮箱
+git config --global user.name 'git'
+git config --global user.email 'taiguo.li@joowing.com'
+git config --global user.email 'litaiguo1009@126.com'
+
+
+#设置本地库用户名、邮箱
+git config --local user.name 'git'
+git config --local user.email 'litaiguo1009@126.com'
+
+
+
+
+#测试能不能通过ssh连服务器
+ssh -T git@github.com
+ssh -T git@gitlab
+
+#生产公钥、私钥
+ssh-keygen -t rsa -C "litaiguo1009@126.com"
+ssh-keygen -t rsa -C "taiguo.li@joowing.com"
+
+
+
+#可以执行
+git clone git@github.com:litaiguo/learngit.git
+
+#都可以执行
+git clone git@git.joowing.com:dataservice/data_service.git
+git clone git@git.joowing.com:dataservice/sync_jobs.git
+
+
+
+#可以执行
+git clone https://github.com/litaiguo/learngit.git
+#不能执行
+git clone https://git.joowing.com/dataservice/sync_jobs.git
+
+
+
